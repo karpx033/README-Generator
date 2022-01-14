@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const Choices = require('inquirer/lib/objects/choices');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+// const generateMarkdown = require('./utils/generateMarkdown.js');
 const genMark = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [
@@ -43,7 +43,7 @@ function init() {
         {
             type: "list",
             message: questions[3],
-            name: "licenses",
+            name: "license",
             choices: ["Apache", "Boost", "MIT", "N/A"]
         },
         {
@@ -55,8 +55,8 @@ function init() {
     .then((answers) => {
         var fileName = answers.title;
         var data = answers;
-        generateMarkdown(data);
-        var data = generateMarkdown(data);
+        genMark(data);
+        var data = genMark(data);
         writeToFile(fileName, data);
        
     })

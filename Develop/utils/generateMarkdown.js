@@ -13,6 +13,24 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+ 
+${data.title} is an auto generated README.
+
+## Languages
+
+The project primarily uses ${data.languages}.
+
+## Description
+
+${data.description}
+
+## Licenses
+
+Licensed by ${data.licenses}
+
+## Contributors
+
+${data.contributors} helped... technically
 
 `;
 }

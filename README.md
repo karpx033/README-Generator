@@ -12,6 +12,10 @@
  ## Description
 
 The purpose of the application is to To automatically generate a professional README following a series of terminal prompts.
+
+## Video
+
+(https://watch.screencastify.com/v/AqWKjMt8yHNs8qc9DluJ)
  
 ## Installation
 

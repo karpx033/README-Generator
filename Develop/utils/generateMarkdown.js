@@ -31,11 +31,17 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-      if (license==="Apache") {
-      return "Successful Apache";
-    } else {
-      return "so sowwy"
-    }
+  if (license==="N/A") {
+    return "";
+  } else {
+     return `
+     ## Licenses  
+     
+     ${renderLicenseBadge(license)}${renderLicenseLink(license)}  
+     
+     
+     This application is licensed by ${license}`; 
+  }
 } 
 
 // TODO: Create a function to generate markdown for README
@@ -54,11 +60,11 @@ The project primarily uses ${data.languages}.
 
 ${data.description}
 
-## Licenses
-${renderLicenseBadge(license)}${renderLicenseLink(license)}
-${renderLicenseSection(license)}
 
-Licensed by ${data.license}
+${renderLicenseSection(license)}
+${renderLicenseBadge(license)}${renderLicenseLink(license)}
+
+
 
 ## Contributors
 

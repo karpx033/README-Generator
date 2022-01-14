@@ -35,7 +35,7 @@ function renderLicenseSection(license) {
   if (license==="N/A") {
     return "";
   } else {
-     return "## Licensed "+renderLicenseBadge(license)+renderLicenseLink(license) +`
+     return "## License "+renderLicenseBadge(license)+renderLicenseLink(license) +`
      
      This application is licensed by ${license}`;
   }
@@ -46,24 +46,51 @@ function generateMarkdown(data) {
  
   var license = data.license;
   return `# ${data.title}
- 
-${data.title} is an auto generated README.
-
-## Languages
-
-The project primarily uses ${data.languages}.
-
-## Description
-
-${data.description}
 
 ${renderLicenseSection(license)}
 
-## Contributors
+## Table of Contents
 
-${data.contributors} helped... technically
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [Questions](#questions)
+
+ ## Description
+
+The purpose of the application is to ${data.description}.
+ 
+## Installation
+
+${data.install}
+
+## Usage
+
+${data.usage}
+
+## Tests
+
+${data.tests}
+
+## Contributing
+
+${data.contributing}
+
+## Questions
+
+My GitHub username is: ${data.github}
+
+Link @ https://github.com/${data.github}
+
+Email: ${data.email}
+
+Got Questions? 
+${data.questions}
 
 `;
+
 }
 
 module.exports = generateMarkdown;

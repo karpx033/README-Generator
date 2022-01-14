@@ -8,9 +8,15 @@ const genMark = require('./utils/generateMarkdown.js');
 const questions = [
     'What is the title of your project', 
     'Give a description of your project', 
-    'What languages does your project use?', 
-    'What liscences does your project have?', 
-    'Who contributed to your project?'];
+    'What installation requirements do you require?', 
+    'What liscence does your project have?', 
+    'How do you contribute to the application?',
+    'What is your usage information?',
+    'What tests do you still need to conduct on your application?',
+    'What is your GitHub username?',
+    'What is your email?',
+    'How do I reach you with questions?'
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -38,7 +44,7 @@ function init() {
         {
             type: "input",
             message: questions[2],
-            name: "languages"
+            name: "install"
         },
         {
             type: "list",
@@ -49,7 +55,32 @@ function init() {
         {
             type: "input",
             message: questions[4],
-            name: "contributors"
+            name: "contributing"
+        },
+        {
+            type: "input",
+            message: questions[5],
+            name: "usage"
+        },
+        {
+            type: "input",
+            message: questions[6],
+            name: "tests"
+        },
+        {
+            type: "input",
+            message: questions[7],
+            name: "github"
+        },
+        {
+            type: "input",
+            message: questions[8],
+            name: "email"
+        },
+        {
+            type: "input",
+            message: questions[9],
+            name: "questions"
         },
     ])
     .then((answers) => {

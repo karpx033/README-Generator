@@ -31,16 +31,13 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+
   if (license==="N/A") {
     return "";
   } else {
-     return `
-     ## Licenses  
+     return "## Licensed "+renderLicenseBadge(license)+renderLicenseLink(license) +`
      
-     ${renderLicenseBadge(license)}${renderLicenseLink(license)}  
-     
-     
-     This application is licensed by ${license}`; 
+     This application is licensed by ${license}`;
   }
 } 
 
@@ -60,11 +57,7 @@ The project primarily uses ${data.languages}.
 
 ${data.description}
 
-
 ${renderLicenseSection(license)}
-${renderLicenseBadge(license)}${renderLicenseLink(license)}
-
-
 
 ## Contributors
 
